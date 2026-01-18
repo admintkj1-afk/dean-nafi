@@ -1,0 +1,132 @@
+✅ UPDATE WEBSITE - FITUR FOTO & PLAYER IMPROVEMENT
+
+========================================
+🎨 PERUBAHAN YANG DILAKUKAN
+========================================
+
+1. ✅ ALBUM ART / FOTO LAGU
+   - Setiap lagu sekarang punya foto album cover
+   - Foto ditampilkan di song card (besar)
+   - Foto ditampilkan di player (kecil)
+   - Folder "images/" sudah siap untuk upload
+
+2. ✅ CUSTOM MUSIC PLAYER
+   - Tombol Play/Pause yang besar & mudah diklik
+   - Progress bar dengan durasi real-time
+   - Volume control slider
+   - Display waktu: current time / total duration
+
+3. ✅ FEATURED SONGS SUBTITLE
+   - Tambahan text "🎵 Rilis My Song 🎵" di bawah judul Featured Songs
+   - Membuat lebih menarik & profesional
+
+========================================
+📁 STRUKTUR FOLDER TERBARU
+========================================
+
+dean.nafi/
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── audio/
+│   ├── 01-between-the-notes.mp3
+│   ├── 02-not-alone-tonight.mp3
+│   ├── 03-rise-again.mp3
+│   ├── 04-light-in-the-dark.mp3
+│   └── 05-on-my-mind.mp3
+└── images/  ← FOLDER BARU!
+    ├── 01-between-the-notes.jpg
+    ├── 02-not-alone-tonight.jpg
+    ├── 03-rise-again.jpg
+    ├── 04-light-in-the-dark.jpg
+    └── 05-on-my-mind.jpg
+
+========================================
+🎵 CARA UPLOAD FOTO
+========================================
+
+1. Siapkan 5 foto album cover
+2. Rename dengan nama PERSIS:
+   - 01-between-the-notes.jpg
+   - 02-not-alone-tonight.jpg
+   - 03-rise-again.jpg
+   - 04-light-in-the-dark.jpg
+   - 05-on-my-mind.jpg
+
+3. Copy ke folder "images/"
+4. Refresh website - foto akan muncul otomatis!
+
+Rekomendasi:
+- Ukuran: 500x500px
+- Format: JPG atau PNG
+- File size: < 500KB
+
+========================================
+▶️ PLAYER BARU - FITUR
+========================================
+
+✨ Play/Pause Button
+   - Big circular button dengan icon play/pause
+   - Warna: Green (primary color)
+   - Auto-update icon saat play/pause
+
+✨ Progress Bar
+   - Draggable untuk seek
+   - Display durasi lagu
+   - Auto-update waktu real-time
+
+✨ Volume Control
+   - Slider untuk volume
+   - Icon speaker
+   - Range 0-100%
+
+✨ Time Display
+   - Current time: 0:00
+   - Total duration: 3:45
+   - Format MM:SS
+
+========================================
+🎨 STYLING IMPROVEMENTS
+========================================
+
+- Album art di song card: 200x200px dengan hover effect
+- Album art di player: 80x80px
+- Custom progress bar dengan styling
+- Volume slider dengan styling
+- Responsive design tetap perfect
+
+========================================
+📝 FITUR YANG TETAP ADA
+========================================
+
+✅ Semua fitur sebelumnya tetap berfungsi:
+   - Play musik dari song card
+   - View lirik
+   - Add to playlist
+   - Download playlist
+   - Social media links
+   - Contact form
+
+========================================
+🚀 TESTING
+========================================
+
+1. Buka index.html
+2. Test play/pause button
+3. Drag progress bar
+4. Adjust volume
+5. Upload foto di folder images/
+6. Refresh - foto seharusnya muncul
+
+========================================
+💡 TIPS
+========================================
+
+- Foto otomatis menyesuaikan dengan ukuran container
+- Jika foto tidak ada, akan show icon musik default
+- Player fully responsive di semua ukuran
+- Semua event listener sudah auto-attach
+
+SIAP UNTUK DIMULAI! 🎉

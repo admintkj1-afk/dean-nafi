@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dean Nafi Music - Original Songs & Artists</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-music"></i> Dean Nafi Music</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#songs">Songs</a></li>
+                <li><a href="#playlist">My Playlist</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to Dean Nafi Music</h2>
+            <p>Discover Original Music - Create Your Personal Playlist</p>
+            <button class="btn btn-primary" onclick="document.getElementById('songs').scrollIntoView({behavior: 'smooth'})">
+                Explore Songs
+            </button>
+        </div>
+    </section>
+
+    <!-- Songs Section -->
+    <section class="songs-section" id="songs">
+        <div class="container">
+            <h2 class="section-title">Featured Songs</h2>
+            <p class="featured-subtitle">🎵 Rilis My Song 🎵</p>
+            <div class="songs-grid" id="songsGrid">
+                <!-- Songs will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Playing -->
+    <section class="player-section">
+        <div class="container">
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="album-art" id="albumArt">
+                        <img id="albumImg" src="" alt="Album Art" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                        <i class="fas fa-music" id="musicIcon"></i>
+                    </div>
+                    <div class="song-details">
+                        <h3 id="currentSongTitle">Select a song</h3>
+                        <p id="currentSongArtist">Dean Nafi</p>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <audio id="audioPlayer" controls>
+                        <source src="" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <button class="btn-save-playlist" id="savePlaylistBtn" onclick="addToPlaylist()">
+                    <i class="fas fa-heart"></i> Add to Playlist
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist Section -->
+    <section class="playlist-section" id="playlist">
+        <div class="container">
+            <h2 class="section-title">My Playlist</h2>
+            <div class="playlist-container">
+                <div id="playlistEmpty" class="empty-state">
+                    <i class="fas fa-compact-disc"></i>
+                    <p>Your playlist is empty. Add songs to get started!</p>
+                </div>
+                <ul id="playlistItems" class="playlist-items">
+                    <!-- Playlist items will be added here -->
+                </ul>
+            </div>
+            <div class="playlist-actions">
+                <button class="btn btn-secondary" onclick="clearPlaylist()">Clear Playlist</button>
+                <button class="btn btn-secondary" onclick="downloadPlaylist()">Download Playlist</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Social Media Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Connect With Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Follow me on social media or reach out via WhatsApp</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@dean-nafi2?si=Raft8rpYgQA-gSKu" target="_blank" class="social-btn youtube">
+                            <i class="fab fa-youtube"></i> YouTube
+                        </a>
+                        <a href="https://tiktok.com/@dean.nafi192" target="_blank" class="social-btn tiktok">
+                            <i class="fab fa-tiktok"></i> TikTok
+                        </a>
+                        <a href="https://www.instagram.com/dean.nafi?igsh=bzFycG01NmRxZDgw" target="_blank" class="social-btn instagram">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="https://wa.me/6285665874860?text=Selamat%20datang%20di%20Dean%20Nafi%20Music%20ada%20yang%20bisa%20saya%20bantu" target="_blank" class="social-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp: +62 856-6587-486
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="handleContactForm(event)">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Dean Nafi Music. All rights reserved.</p>
+            <p>Contact: <a href="tel:+6285665874860">+62 856-6587-486</a></p>
+        </div>
+    </footer>
+
+    <!-- Song Modal for Lyrics -->
+    <div id="songModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSongModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalSongTitle"></h2>
+                <p id="modalSongArtist">Dean Nafi</p>
+            </div>
+            <div class="lyrics-container">
+                <div id="lyricsContent"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="playModalSong()">Play Song</button>
+                <button class="btn btn-secondary" onclick="addModalToPlaylist()">Add to Playlist</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
